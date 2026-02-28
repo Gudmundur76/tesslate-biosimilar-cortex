@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/tesslate_biosimilar
+      - RUVECTOR_STORAGE_PATH=/app/data/ruvector
+      - CONTEXT_ENGINEERING_ENABLED=true
+      - NVIDIA_NIM_API_KEY=${NVIDIA_NIM_API_KEY}
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - tesslate-network
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=tesslate_biosimilar
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - tesslate-network
+
+networks:
+  tesslate-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
