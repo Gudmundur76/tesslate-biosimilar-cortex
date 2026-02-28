@@ -28,7 +28,7 @@ A `setup.sh` script is provided to automate the forking of the required foundati
 
 ```bash
 # This script will:
-# 1. Clone the ruvector and Agent-Skills-for-Context-Engineering repositories.
+# 1. Clone ruvector, Agent-Skills-for-Context-Engineering, and Tesslate Studio repositories.
 # 2. Configure the necessary environment variables.
 # 3. Prepare the Docker environment.
 
@@ -37,11 +37,12 @@ bash setup.sh
 
 ### Manual Setup
 
-1.  **Clone the Foundational Repositories**:
+11. **Clone the Foundational Repositories**:
 
     ```bash
     git clone https://github.com/ruvnet/ruvector.git
     git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering.git
+    git clone https://github.com/TesslateAI/Studio.git
     ```
 
 2.  **Configure Environment**:

@@ -9,6 +9,7 @@ echo "🚀 Starting Tesslate Biosimilar Cortex Setup..."
 # 1. Define foundational repositories
 RUVECTOR_REPO="https://github.com/ruvnet/ruvector.git"
 AGENT_SKILLS_REPO="https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering.git"
+TESSLATE_STUDIO_REPO="https://github.com/TesslateAI/Studio.git"
 
 # 2. Create directory structure
 echo "📂 Creating project directories..."
@@ -30,6 +31,13 @@ if [ ! -d "core/foundational/agent-skills" ]; then
     git clone $AGENT_SKILLS_REPO core/foundational/agent-skills
 else
     echo "✅ Agent-Skills already exists, skipping clone."
+fi
+
+if [ ! -d "core/foundational/tesslate-studio" ]; then
+    echo "🌐 Cloning Tesslate Studio..."
+    git clone $TESSLATE_STUDIO_REPO core/foundational/tesslate-studio
+else
+    echo "✅ Tesslate Studio already exists, skipping clone."
 fi
 
 # 4. Initialize environment
