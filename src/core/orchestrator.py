@@ -1,8 +1,7 @@
 import os
+import sys
 import json
 from typing import Dict, Any
-import sys
-import os
 
 # Import the functional skill logic
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../skills/cmc-analyst')))
