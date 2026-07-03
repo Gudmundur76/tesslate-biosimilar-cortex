@@ -6,14 +6,14 @@ from ..core.orchestrator import Orchestrator
 app = FastAPI(title="Tesslate Biosimilar Cortex API")
 orchestrator = Orchestrator()
 
-class ProvisionProgramRequest(BaseModel:
+class ProvisionProgramRequest(BaseModel):
     client_name: str
     molecule: str
     reference_product: str
     regulatory_pathway: str
     rvf_config: Dict[str, Any]
 
-class CmcAnalysisRequest(BaseModel:
+class CmcAnalysisRequest(BaseModel):
     batch_id: str
     method: str
     innovator_batch_id: str
